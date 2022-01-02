@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:suitmedia_app_test/modules/dashboard/dashboard_page.dart';
 import 'package:suitmedia_app_test/modules/login/login_page.dart';
+import 'package:suitmedia_app_test/services/color_pallete.dart';
 
-import 'modules/dashboard/DashboardPage.dart';
+import 'modules/list_user_page/list_user_page.dart';
 
 void main() async {
   runApp(InfosysApp());
@@ -15,15 +17,16 @@ class InfosysApp extends StatelessWidget {
       title: 'Suitmedia - Test App',
       theme: ThemeData(
         appBarTheme: AppBarTheme(
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: ColorPallete.primaryColor),
         ),
-        primarySwatch: Colors.deepOrange,
+        primaryColor: Colors.white,
         fontFamily: 'Poppins',
       ),
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => LoginPage(),
-        DashboardPage.routeName: (context) => DashboardPage()
+        DashboardPage.routeName: (context) => DashboardPage(),
+        ListUserPage.routeName: (context) => ListUserPage()
       },
     );
   }

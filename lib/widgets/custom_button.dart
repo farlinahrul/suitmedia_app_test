@@ -39,9 +39,8 @@ class CustomPrimaryButton extends StatelessWidget {
           label,
           textAlign: TextAlign.center,
           style: TextStyle(
-            letterSpacing: 2,
             fontSize: 14,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w500,
             color: Colors.white,
             fontFamily: 'Poppins',
           ),

@@ -7,6 +7,55 @@ class LoginPage extends StatelessWidget {
   static String routeName = "/login-page";
   final LoginController _loginController = Get.put(LoginController());
 
+  Widget buttonNext() {
+    return CustomPrimaryButton(
+      'NEXT',
+      onPressed: () => _loginController.next(),
+    );
+  }
+
+  Widget buttonCheck() {
+    return CustomPrimaryButton(
+      'CHECK',
+      onPressed: () => _loginController.check(),
+    );
+  }
+
+  Widget formPalindrome() {
+    return TextFormField(
+      controller: _loginController.palindromeTextController,
+      decoration: InputDecoration(
+        hintText: 'Palindrome',
+        filled: true,
+        fillColor: Colors.white,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+    );
+  }
+
+  Widget formName() {
+    return TextFormField(
+      controller: _loginController.nameTextController,
+      decoration: InputDecoration(
+        hintText: 'Name',
+        filled: true,
+        fillColor: Colors.white,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+    );
+  }
+
+  Widget imageLogo(BuildContext context) {
+    return Image.asset(
+      'assets/images/btn_add_photo .png',
+      height: MediaQuery.of(context).size.height / 6,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,52 +73,23 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'assets/images/btn_add_photo .png',
-                  height: MediaQuery.of(context).size.height / 6,
-                ),
+                imageLogo(context),
                 SizedBox(
                   height: 58,
                 ),
-                TextFormField(
-                  controller: _loginController.nameTextController,
-                  decoration: InputDecoration(
-                    hintText: 'Name',
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
+                formName(),
                 SizedBox(
                   height: 22,
                 ),
-                TextFormField(
-                  controller: _loginController.palindromeTextController,
-                  decoration: InputDecoration(
-                    hintText: 'Palindrome',
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
+                formPalindrome(),
                 SizedBox(
                   height: 45,
                 ),
-                CustomPrimaryButton(
-                  'CHECK',
-                  onPressed: () => _loginController.check(),
-                ),
+                buttonCheck(),
                 SizedBox(
                   height: 15,
                 ),
-                CustomPrimaryButton(
-                  'NEXT',
-                  onPressed: () => _loginController.next(),
-                )
+                buttonNext()
               ],
             ),
           ),

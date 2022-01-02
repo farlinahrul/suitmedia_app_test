@@ -36,14 +36,17 @@ class OneButtonAlertDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: EdgeInsets.only(bottom: 1),
+              padding: EdgeInsets.symmetric(vertical: 16),
               child: NormalText(
                 title,
                 textAlign: TextAlign.center,
-                fontSize: 14.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold,
-                color: ColorPallete.blue,
+                color: ColorPallete.primaryColor,
               ),
+            ),
+            SizedBox(
+              height: 12,
             ),
             CustomPrimaryButton(
               buttonText,

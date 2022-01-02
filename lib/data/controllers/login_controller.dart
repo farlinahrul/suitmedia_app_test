@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:suitmedia_app_test/modules/dashboard/DashboardPage.dart';
+import 'package:suitmedia_app_test/data/controllers/dashboard_controller.dart';
 import 'package:suitmedia_app_test/widgets/alert_dalog.dart';
 
 class LoginController extends GetxController {
@@ -33,7 +33,7 @@ class LoginController extends GetxController {
     Get.dialog(
       OneButtonAlertDialog(
         title: title,
-        buttonText: 'Next',
+        buttonText: 'Close',
         onPressed: () {
           Get.back();
         },
@@ -43,7 +43,10 @@ class LoginController extends GetxController {
   }
 
   void next() {
-    Get.to(() => DashboardPage());
+    final DashboardController _dashboardController =
+        Get.put(DashboardController());
+    Get.toNamed('/dashboard');
+    _dashboardController.changeName(nameTextController!.text);
   }
 
   @override
