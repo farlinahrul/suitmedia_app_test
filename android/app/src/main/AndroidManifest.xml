@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.infosys_app">
+    package="com.example.suitmedia_test_app">
    <application
-        android:label="infosys_app"
+        android:label="suitmedia_test_app"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

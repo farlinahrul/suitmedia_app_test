@@ -1,4 +1,4 @@
-package com.example.infosys_app
+package com.example.suitmedia_test_app
 
 import io.flutter.embedding.android.FlutterActivity
 

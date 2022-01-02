@@ -25,7 +25,8 @@ class LoginController extends GetxController {
 
   void check() {
     String title = '';
-    if (_isPalindrome(palindromeTextController!.text)) {
+    if (_isPalindrome(palindromeTextController!.text) &&
+        palindromeTextController!.text.length != 0) {
       title = 'isPalindrome';
     } else {
       title = 'not Palindrome';
